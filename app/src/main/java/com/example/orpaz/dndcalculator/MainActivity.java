@@ -23,7 +23,7 @@ import java.util.Random;
 
 import java.util.Random;
 
-public class MainActivity extends Activity  {
+public class MainActivity extends Activity {
 
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7;
     String dice4, dice6, dice8, dice10, dice12, dice20, dice100, temp;
@@ -32,7 +32,7 @@ public class MainActivity extends Activity  {
     Spinner spinner;
     TextView resultTv;
     RatingBar ratingBar;
-    MediaPlayer player=null;
+    MediaPlayer player = null;
     String status_music;
     ImageView volume;
 
@@ -50,23 +50,20 @@ public class MainActivity extends Activity  {
         checkBox6 = findViewById(R.id.check_box6);
         checkBox7 = findViewById(R.id.check_box7);
 
-        RadioGroup radioGroup=findViewById(R.id.radio_group);
-        RadioButton onBtn=findViewById(R.id.radio_btn_on);
-        RadioButton offBtn=findViewById(R.id.radio_btn_off);
-        volume=findViewById(R.id.volume_on_img);
+        RadioGroup radioGroup = findViewById(R.id.radio_group);
+        RadioButton onBtn = findViewById(R.id.radio_btn_on);
+        RadioButton offBtn = findViewById(R.id.radio_btn_off);
+        volume = findViewById(R.id.volume_on_img);
 
 
-        //volumeOff=findViewById(R.drawable.volume_off);
-
-        if(onBtn.isChecked())
+        if (onBtn.isChecked())
             playSound();
 
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch(checkedId)
-                {
+                switch (checkedId) {
                     case R.id.radio_btn_on:
                         playSound();
                         volume.setImageResource(R.drawable.volume_on);
@@ -79,35 +76,35 @@ public class MainActivity extends Activity  {
             }
         });
 
-        resultTv=findViewById(R.id.result_view);
-        ratingBar=findViewById(R.id.rating_bar);
-        final TextView rateTxt=findViewById(R.id.rate_view);
-        Button rateBtn=findViewById(R.id.rating_btn);
+        resultTv = findViewById(R.id.result_view);
+        ratingBar = findViewById(R.id.rating_bar);
+        final TextView rateTxt = findViewById(R.id.rate_view);
+        Button rateBtn = findViewById(R.id.rating_btn);
         rateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float ratingValue=ratingBar.getRating();
-                if(ratingValue<2)
+                float ratingValue = ratingBar.getRating();
+                if (ratingValue < 2)
                     rateTxt.setText(R.string.rate_line1_txt);
-                else if(ratingValue<=3)
+                else if (ratingValue <= 3)
                     rateTxt.setText(R.string.rate_line2_txt);
-                else if (ratingValue<=4)
+                else if (ratingValue <= 4)
                     rateTxt.setText(R.string.rate_line3_txt);
                 else
                     rateTxt.setText(R.string.rate_line4_txt);
             }
         });
 
-        final ImageView logo=findViewById(R.id.image_bg1);
-        spinner=findViewById(R.id.spinner_id);
-        String[] walls={getString(R.string.logo1_txt),getString(R.string.logo2_txt), getString(R.string.logo3_txt)};
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, walls);
+        final ImageView logo = findViewById(R.id.image_bg1);
+        spinner = findViewById(R.id.spinner_id);
+        String[] walls = {getString(R.string.logo1_txt), getString(R.string.logo2_txt), getString(R.string.logo3_txt)};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, walls);
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch(position){
+                switch (position) {
                     case 0:
                         logo.setImageResource(R.drawable.bg1);
                         break;
@@ -325,7 +322,7 @@ public class MainActivity extends Activity  {
         final StringBuilder dice100Txt = new StringBuilder("");
 
         final Random r = new Random();
-        Button rollBtn=findViewById(R.id.roll_btn);
+        Button rollBtn = findViewById(R.id.roll_btn);
         rollBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -339,37 +336,37 @@ public class MainActivity extends Activity  {
                 dice20Txt.setLength(0);
                 dice100Txt.setLength(0);
                 diceResults.setLength(0);
-                dice4Int=0;
-                dice6Int=0;
-                dice8Int=0;
-                dice12Int=0;
-                dice10Int=0;
-                dice20Int=0;
-                dice100Int=0;
-                sum=0;
+                dice4Int = 0;
+                dice6Int = 0;
+                dice8Int = 0;
+                dice12Int = 0;
+                dice10Int = 0;
+                dice20Int = 0;
+                dice100Int = 0;
+                sum = 0;
 
-                dice4=editText1.getText().toString();
-                if(dice4.length() != 0)
-                    dice4Int=Integer.parseInt(dice4);
-                dice6=editText2.getText().toString();
-                if(dice6.length() != 0)
-                    dice6Int=Integer.parseInt(dice6);
-                dice8=editText3.getText().toString();
-                if(dice8.length() != 0)
-                    dice8Int=Integer.parseInt(dice8);
-                dice10=editText4.getText().toString();
-                if(dice10.length() != 0)
-                    dice10Int=Integer.parseInt(dice10);
-                dice12=editText5.getText().toString();
-                if(dice12.length() != 0)
-                    dice12Int=Integer.parseInt(dice12);
-                dice20=editText6.getText().toString();
-                if(dice20.length() != 0)
-                    dice20Int=Integer.parseInt(dice20);
-                dice100=editText7.getText().toString();
-                if(dice100.length() != 0)
-                    dice100Int=Integer.parseInt(dice100);
-                if(!checkBox1.isChecked() && !checkBox2.isChecked() && !checkBox3.isChecked()&& !checkBox4.isChecked() &&
+                dice4 = editText1.getText().toString();
+                if (dice4.length() != 0)
+                    dice4Int = Integer.parseInt(dice4);
+                dice6 = editText2.getText().toString();
+                if (dice6.length() != 0)
+                    dice6Int = Integer.parseInt(dice6);
+                dice8 = editText3.getText().toString();
+                if (dice8.length() != 0)
+                    dice8Int = Integer.parseInt(dice8);
+                dice10 = editText4.getText().toString();
+                if (dice10.length() != 0)
+                    dice10Int = Integer.parseInt(dice10);
+                dice12 = editText5.getText().toString();
+                if (dice12.length() != 0)
+                    dice12Int = Integer.parseInt(dice12);
+                dice20 = editText6.getText().toString();
+                if (dice20.length() != 0)
+                    dice20Int = Integer.parseInt(dice20);
+                dice100 = editText7.getText().toString();
+                if (dice100.length() != 0)
+                    dice100Int = Integer.parseInt(dice100);
+                if (!checkBox1.isChecked() && !checkBox2.isChecked() && !checkBox3.isChecked() && !checkBox4.isChecked() &&
                         !checkBox5.isChecked() && !checkBox6.isChecked() && !checkBox7.isChecked())
                     Toast.makeText(MainActivity.this, R.string.not_checked_txt, Toast.LENGTH_SHORT).show();
                 else {
@@ -379,12 +376,12 @@ public class MainActivity extends Activity  {
                         dice4Txt.append(temp);
                         for (int i = 0; i < dice4Int - 1; i++) {
                             int randomNumber = r.nextInt(4) + 1;
-                            sum=sum+ randomNumber;
+                            sum = sum + randomNumber;
                             temp = randomNumber + ",";
                             dice4Txt.append(temp);
                         }
                         int randomNumber = r.nextInt(4) + 1;
-                        sum=sum+ randomNumber;
+                        sum = sum + randomNumber;
                         temp = randomNumber + "";
                         dice4Txt.append(temp);
                         temp = dice4Txt + "\n";
@@ -396,12 +393,12 @@ public class MainActivity extends Activity  {
                         dice6Txt.append(temp);
                         for (int i = 0; i < dice6Int - 1; i++) {
                             int randomNumber = r.nextInt(6) + 1;
-                            sum=sum+ randomNumber;
+                            sum = sum + randomNumber;
                             temp = randomNumber + ",";
                             dice6Txt.append(temp);
                         }
                         int randomNumber = r.nextInt(6) + 1;
-                        sum=sum+ randomNumber;
+                        sum = sum + randomNumber;
                         temp = randomNumber + " ";
                         dice6Txt.append(temp);
                         temp = dice6Txt + "\n";
@@ -414,12 +411,12 @@ public class MainActivity extends Activity  {
                         dice8Txt.append(temp);
                         for (int i = 0; i < dice8Int - 1; i++) {
                             int randomNumber = r.nextInt(8) + 1;
-                            sum=sum+ randomNumber;
+                            sum = sum + randomNumber;
                             temp = randomNumber + ",";
                             dice8Txt.append(temp);
                         }
                         int randomNumber = r.nextInt(8) + 1;
-                        sum=sum+ randomNumber;
+                        sum = sum + randomNumber;
                         temp = randomNumber + " ";
                         dice8Txt.append(temp);
                         temp = dice8Txt + "\n";
@@ -431,12 +428,12 @@ public class MainActivity extends Activity  {
                         dice10Txt.append(temp);
                         for (int i = 0; i < dice10Int - 1; i++) {
                             int randomNumber = r.nextInt(10) + 1;
-                            sum=sum+ randomNumber;
+                            sum = sum + randomNumber;
                             temp = randomNumber + ",";
                             dice10Txt.append(temp);
                         }
                         int randomNumber = r.nextInt(10) + 1;
-                        sum=sum+ randomNumber;
+                        sum = sum + randomNumber;
                         temp = randomNumber + " ";
                         dice10Txt.append(temp);
                         temp = dice10Txt + "\n";
@@ -448,12 +445,12 @@ public class MainActivity extends Activity  {
                         dice12Txt.append(temp);
                         for (int i = 0; i < dice12Int - 1; i++) {
                             int randomNumber = r.nextInt(12) + 1;
-                            sum=sum+ randomNumber;
+                            sum = sum + randomNumber;
                             temp = randomNumber + ",";
                             dice12Txt.append(temp);
                         }
                         int randomNumber = r.nextInt(12) + 1;
-                        sum=sum+ randomNumber;
+                        sum = sum + randomNumber;
                         temp = randomNumber + " ";
                         dice12Txt.append(temp);
                         temp = dice12Txt + "\n";
@@ -465,12 +462,12 @@ public class MainActivity extends Activity  {
                         dice20Txt.append(temp);
                         for (int i = 0; i < dice20Int - 1; i++) {
                             int randomNumber = r.nextInt(20) + 1;
-                            sum=sum+ randomNumber;
+                            sum = sum + randomNumber;
                             temp = randomNumber + ",";
                             dice20Txt.append(temp);
                         }
                         int randomNumber = r.nextInt(20) + 1;
-                        sum=sum+ randomNumber;
+                        sum = sum + randomNumber;
                         temp = randomNumber + " ";
                         dice20Txt.append(temp);
                         temp = dice20Txt + "\n";
@@ -482,42 +479,42 @@ public class MainActivity extends Activity  {
                         dice100Txt.append(temp);
                         for (int i = 0; i < dice100Int - 1; i++) {
                             int randomNumber = r.nextInt(100) + 1;
-                            sum=sum+ randomNumber;
+                            sum = sum + randomNumber;
                             temp = randomNumber + ",";
                             dice100Txt.append(temp);
                         }
                         int randomNumber = r.nextInt(100) + 1;
-                        sum=sum+ randomNumber;
+                        sum = sum + randomNumber;
                         temp = randomNumber + " ";
                         dice100Txt.append(temp);
                         temp = dice100Txt + "\n";
                         diceResults.append(temp);
                     }
 
-                    temp="\n"+getString(R.string.score_txt)+" ";
-                    temp=diceResults+temp+sum;
+                    temp = "\n" + getString(R.string.score_txt) + " ";
+                    temp = diceResults + temp + sum;
                     resultTv.setText(temp);
                 }
             }
         });
 
-        Button clearBtn=findViewById(R.id.clear_btn);
+        Button clearBtn = findViewById(R.id.clear_btn);
         clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkBox1.isChecked())
+                if (checkBox1.isChecked())
                     checkBox1.performClick();
-                if(checkBox2.isChecked())
+                if (checkBox2.isChecked())
                     checkBox2.performClick();
-                if(checkBox3.isChecked())
+                if (checkBox3.isChecked())
                     checkBox3.performClick();
-                if(checkBox4.isChecked())
+                if (checkBox4.isChecked())
                     checkBox4.performClick();
-                if(checkBox5.isChecked())
+                if (checkBox5.isChecked())
                     checkBox5.performClick();
-                if(checkBox6.isChecked())
+                if (checkBox6.isChecked())
                     checkBox6.performClick();
-                if(checkBox7.isChecked())
+                if (checkBox7.isChecked())
                     checkBox7.performClick();
                 resultTv.setText(R.string.empty_txt);
             }
@@ -527,28 +524,25 @@ public class MainActivity extends Activity  {
     @Override
     protected void onPause() {
         super.onPause();
-        if(player!=null)
-            player.release();;
+        if (player != null)
+            player.release();
+        ;
     }
 
-    public void playSound()
-    {
-        if(player==null)
-        {
-            status_music="play";
-            player=MediaPlayer.create(this, R.raw.spooky);
+    public void playSound() {
+        if (player == null) {
+            status_music = "play";
+            player = MediaPlayer.create(this, R.raw.spooky);
             player.start();
             player.setLooping(true);
         }
     }
 
-    public void stopSound()
-    {
-        if(player!=null)
-        {
-            status_music="stop";
+    public void stopSound() {
+        if (player != null) {
+            status_music = "stop";
             player.release();
-            player=null;
+            player = null;
         }
     }
 
