@@ -7,7 +7,7 @@ This is an academic project of my third year as a student at Holon Institute of 
 
 Project Tasks:
 - Design simple screen in android
-- 
+- TODO
 
 
 
