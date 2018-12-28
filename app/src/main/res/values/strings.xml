@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">DnD_Calculator</string>
+    <string name="roll_txt">Roll the dice</string>
+    <string name="dice_type_txt">Choose type of dice:</string>
+    <string name="clear_txt">Clear</string>
+    <string name="score_txt">Total score:</string>
+    <string name="d4_txt">4d</string>
+    <string name="d6_txt">6d</string>
+    <string name="d8_txt">8d</string>
+    <string name="d10_txt">10d</string>
+    <string name="d12_txt">12d</string>
+    <string name="d20_txt">20d</string>
+    <string name="d100_txt">100d</string>
+    <string name="dice_num_txt">Enter number of dice to roll (scrolled page):</string>
+    <string name="logo1_txt">Logo 1</string>
+    <string name="logo2_txt">Logo 2</string>
+    <string name="logo3_txt">Logo 3</string>
+    <string name="logo_show_txt">Choose to change logo</string>
+    <string name="empty_txt">" "</string>
+    <string name="not_checked_txt">Check boxes before rolling</string>
+    <string name="rate_txt">Rate us</string>
+    <string name="rate_line1_txt">Is it that worse?</string>
+    <string name="rate_line2_txt">We will try to be better next time!</string>
+    <string name="rate_line3_txt">That means you are having a good time here</string>
+    <string name="rate_line4_txt">Wow! We will keep up the good work</string>
+    <string name="on_txt">Sound</string>
+    <string name="off_txt">Mute</string>
+</resources>

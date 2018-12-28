@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_group"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/volume_on"
+                android:gravity="end"
+                android:id="@+id/volume_on_img"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_btn_on"
+                android:checked="true"
+                android:gravity="end"/>
+
+            <TextView
+                android:id="@+id/on_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="@string/on_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_btn_off"
+                android:gravity="end"/>
+
+            <TextView
+                android:id="@+id/off_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="@string/off_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+
+
+
+        </RadioGroup>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:id="@+id/spinner_id" />
+
+    <ImageView
+        android:id="@+id/image_bg1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/bg1"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/spinner_id"/>
+
+    <ScrollView
+        android:id="@+id/scroll_dice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_bg1"
+        android:layout_marginTop="0dp">
+
+        <RelativeLayout
+            android:id="@+id/relative_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/type_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/textview_shape_selector"
+                android:padding="7dp"
+                android:text="@string/dice_type_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/check_box1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/type_view"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/checkbox_shape_selector"
+                android:padding="7dp"
+                android:text="@string/d4_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/check_box2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/type_view"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@id/check_box1"
+                android:background="@drawable/checkbox_shape_selector"
+                android:padding="7dp"
+                android:text="@string/d6_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/check_box3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/type_view"
+                android:layout_marginTop="7dp"
+                android:layout_toEndOf="@id/check_box2"
+                android:background="@drawable/checkbox_shape_selector"
+                android:padding="7dp"
+                android:text="@string/d8_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/check_box4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/check_box1"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/checkbox_shape_selector"
+                android:padding="7dp"
+                android:text="@string/d10_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/check_box5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/check_box1"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@id/check_box4"
+                android:background="@drawable/checkbox_shape_selector"
+                android:padding="7dp"
+                android:text="@string/d12_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/check_box6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/check_box1"
+                android:layout_marginTop="7dp"
+                android:layout_toEndOf="@id/check_box5"
+                android:background="@drawable/checkbox_shape_selector"
+                android:padding="7dp"
+                android:text="@string/d20_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/check_box7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/check_box4"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/checkbox_shape_selector"
+                android:padding="7dp"
+                android:text="@string/d100_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/num_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/check_box7"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textview_shape_selector"
+                android:padding="7dp"
+                android:text="@string/dice_num_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:layout_marginEnd="5dp"/>
+
+            <LinearLayout
+                android:id="@+id/linear_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/num_view"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/linear_id"
+                android:layout_marginStart="5dp"
+                android:padding="7dp"
+                android:text="@string/roll_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:id="@+id/roll_btn"
+                android:background="@drawable/button_shape_selector" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/linear_id"
+                android:layout_marginStart="5dp"
+                android:padding="7dp"
+                android:text="@string/clear_txt"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@id/roll_btn"
+                android:typeface="serif"
+                android:background="@drawable/button_shape_selector"
+                android:id="@+id/clear_btn"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/clear_btn"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/result_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="10dp"
+                android:padding="7dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:layout_marginEnd="5dp" />
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rating_bar"
+                android:stepSize="0.5" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:padding="7dp"
+                    android:text="@string/rate_txt"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_shape_selector"
+                    android:id="@+id/rating_btn"/>
+
+                <TextView
+                    android:id="@+id/rate_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="7dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginEnd="5dp" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
